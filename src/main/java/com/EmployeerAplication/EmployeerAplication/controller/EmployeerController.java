@@ -1,6 +1,8 @@
 package com.EmployeerAplication.EmployeerAplication.controller;
 
 import com.EmployeerAplication.EmployeerAplication.controller.Entity.Employee;
+import com.EmployeerAplication.EmployeerAplication.service.EmployeerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -14,17 +16,13 @@ import java.util.List;
 //@RestController
 public class EmployeerController {
 
+    @Autowired
+    EmployeerService employeerService;
 
     @RequestMapping("/employees")
 public List<Employee> findAllEmployees(){
-    List<Employee> employeerList = Arrays.asList(
-            new Employee(1, "Alex Johnson", 27, "San Francisco"),
-            new Employee(2, " Liam Zhang", 22, "New York"),
-            new Employee(3, "Noah Smith", 19, " Chicago")
 
-
-    );
-    return employeerList;
+    return employeerService.getAllEmployees();
 }
 }
 
