@@ -21,6 +21,12 @@ public class EmployeerService {
     }
 
     public Employee getAnEmployee( int id) {
-        return employeeList.stream().filter(e -> (e.getEmplyeeId() == id)).findFirst().get();
+        for (Employee e: employeeList){
+            if (e.getEmplyeeId() == id){
+                return e;
+            }
+        }
+        //return employeeList.stream().filter(e -> (e.getEmplyeeId() == id)).findFirst().get();
+        return null;
     }
 }
