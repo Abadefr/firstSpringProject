@@ -20,7 +20,7 @@ public class EmployeerService {
         return employeeList;
     }
 
-    public Employee getAnEmployee( int id) {
+    public Employee getAnEmployeeById( int id) {
         for (Employee e: employeeList){
             if (e.getEmplyeeId() == id){
                 return e;

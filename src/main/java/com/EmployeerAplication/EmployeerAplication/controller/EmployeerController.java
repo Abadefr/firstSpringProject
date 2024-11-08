@@ -4,6 +4,7 @@ import com.EmployeerAplication.EmployeerAplication.controller.Entity.Employee;
 import com.EmployeerAplication.EmployeerAplication.service.EmployeerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +24,10 @@ public class EmployeerController {
 public List<Employee> findAllEmployees(){
 
     return employeerService.getAllEmployees();
+}
+@RequestMapping("/employees/{id}")
+public Employee findAnEmployee(@PathVariable int id) {
+        return employeerService.getAnEmployeeById(id);
 }
 }
 
