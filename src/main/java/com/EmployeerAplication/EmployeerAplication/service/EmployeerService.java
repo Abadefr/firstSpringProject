@@ -19,4 +19,8 @@ public class EmployeerService {
     public List<Employee> getAllEmployees(){
         return employeeList;
     }
+
+    public Employee getAnEmployee( int id) {
+        return employeeList.stream().filter(e -> (e.getEmplyeeId() == id)).findFirst().get();
+    }
 }
