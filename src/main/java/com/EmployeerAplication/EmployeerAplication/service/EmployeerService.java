@@ -21,12 +21,12 @@ public class EmployeerService {
     }
 
     public Employee getAnEmployeeById( int id) {
-        for (Employee e: employeeList){
+        /**for (Employee e: employeeList){
             if (e.getEmplyeeId() == id){
                 return e;
             }
-        }
-        //return employeeList.stream().filter(e -> (e.getEmplyeeId() == id)).findFirst().get();
-        return null;
+        }*/
+        return employeeList.stream().filter(e -> (e.getEmplyeeId() == id)).findFirst().get();
+        //return null;
     }
 }
